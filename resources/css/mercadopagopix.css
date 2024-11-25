@@ -1,0 +1,234 @@
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 3px solid #dad9d9;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+      content: '';  
+    box-sizing: border-box;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-bottom-color: #F9AF07;
+  }
+      
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+
+.mercadopagopixpage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bussinessImageBox{
+    width: 180px;
+    height: 180px;
+    position: relative;
+    border-radius: 100%;
+    border: 2px solid #F9AF07;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 121px -31px rgba(0,0,0,0.42);
+}
+.businessBrandImg{
+    width: 180px;
+    height: 180px;
+    border: 2px solid #F9AF07;
+    border-radius: 100%;
+}
+
+.paymentPixBox{
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 24px;
+    gap: 12px;
+    box-shadow: 0px 0px 121px -31px rgba(0,0,0,0.42);
+    padding: 42px 12px;
+}
+.paymentPixInfoBox{
+    text-align: center;
+}
+
+.paymentPixQrCodeBox{
+    width: 240px;
+    height: 240px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #dad9d9;
+    border-radius: 12px;
+}
+
+.paymentPixQrCode{
+    width: 220px;
+    height: 220px;
+}
+
+.paymentPixQrCodeBoxLoading{
+    width: 240px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #dad9d9;
+    border-radius: 12px;
+}
+
+
+.paymentPixOrderInfoBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.paymentPixTitle{
+    font-size: 32px;
+    font-weight: 600;
+}
+.paymentPixDescription{
+    font-size: 16px;
+}
+
+.paymentPixOrderInfoBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.paymentPixOrderInfoBussinessName{
+    font-size: 14px;
+    color:#666666;
+}
+.paymentPixOrderInfoNumbers{
+    font-size: 14px;
+    color:#666666;
+}
+
+.paymentPixReloadBox{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+
+
+
+
+.paymentPixReloadTitle{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+
+.paymentPixReloadButton{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #F9AF07;
+    font-weight: 800;
+}
+
+.paymentPixCopyBox{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.paymentPixCopyButton{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #F9AF07;
+    border-radius: 8px;
+    color:#FFF;
+    font-size: 16px;
+    font-weight: 800;
+    width: auto;
+    height: auto;
+    padding: 12px;
+}
+
+.paymentPixCopyButton:focus{
+    outline: 1px solid black;
+}
+
+.paymentProviderBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 24px;
+    font-size: 14px;
+}
+.paymentProvideTitle{
+    color:#666666;
+}
+.paymentProvideName{
+    color:#666666;
+}
+
+
+
+.hidden{
+    display: none;
+}
+
+
+
+
+@media (max-width: 520px) {
+   
+    .paymentPixBox{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 24px;
+        gap: 12px;
+        box-shadow: 0px 0px 121px -31px rgba(0, 0, 0, 0);
+        padding: 42px 12px;
+    }
+
+
+}
