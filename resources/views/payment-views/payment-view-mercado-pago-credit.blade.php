@@ -78,7 +78,7 @@
                   paymentIdentificationNumber:cardFormData.payer.identification.number,
                 }
                 try{
-                  const createNewPayment = await fetch("/payment/mercadopagocredit/create", {
+                  const createNewPayment = await fetch("/payment/mercadopago/create", {
                     method: "POST",
                     body: JSON.stringify({
                         paymentId:requestData.paymentId,
@@ -101,39 +101,39 @@
                   const mercadopagopixid = getPixData.data.id  
                   switch(getPixData.data.status){
                         case  "approved":
-                            location.replace(`/payment/mercadopagocredit/success?payment_id=${paymentid}&transaction_id=${mercadopagopixid}`)
+                            location.replace(`/payment/mercadopago/success?payment_id=${paymentid}&transaction_id=${mercadopagopixid}`)
                             break;
                         case  "rejected":
-                            location.replace(`/payment/mercadopagocredit/failed?payment_id=${paymentid}`)
+                            location.replace(`/payment/mercadopago/failed?payment_id=${paymentid}`)
                             break;
                         case  "in_process":
-                            location.replace(`/payment/mercadopagocredit/failed?payment_id=${paymentid}`)
+                            location.replace(`/payment/mercadopago/failed?payment_id=${paymentid}`)
                             break;      
                         case  "in_mediation":
-                            location.replace(`/payment/mercadopagocredit/failed?payment_id=${paymentid}`)
+                            location.replace(`/payment/mercadopago/failed?payment_id=${paymentid}`)
                             break;
                         case  "cancelled":
-                            location.replace(`/payment/mercadopagocredit/failed?payment_id=${paymentid}`)
+                            location.replace(`/payment/mercadopago/failed?payment_id=${paymentid}`)
                             break;
                         case  "refunded":
-                            location.replace(`/payment/mercadopagocredit/failed?payment_id=${paymentid}`)
+                            location.replace(`/payment/mercadopago/failed?payment_id=${paymentid}`)
                             break;                          
                         case  "charged_back":
-                            location.replace(`/payment/mercadopagocredit/failed?payment_id=${paymentid}`)
+                            location.replace(`/payment/mercadopago/failed?payment_id=${paymentid}`)
                             break               
                         case  "charged_back":
-                            location.replace(`/payment/mercadopagocredit/failed?payment_id=${paymentid}`)
+                            location.replace(`/payment/mercadopago/failed?payment_id=${paymentid}`)
                             break     
                     }
                 }else{
                     reloadPage()
                 }
                 }catch(error){
-                  location.replace(`/payment/mercadopagocredit/failed?payment_id=${paymentid}`)
+                  location.replace(`/payment/mercadopago/failed?payment_id=${paymentid}`)
                 } 
               },
               onError: (error) => {
-                location.replace(`/payment/mercadopagocredit/failed?payment_id=${paymentid}`)
+                location.replace(`/payment/mercadopago/failed?payment_id=${paymentid}`)
               },
             },
           };
@@ -141,6 +141,5 @@
         };
         renderCardPaymentBrick(bricksBuilder);  
 </script>
-<script src = "/resources/js/createMercadoPagoCreditPayment.js"></script>
 </body>
 </html>
