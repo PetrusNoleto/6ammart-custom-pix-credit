@@ -96,8 +96,7 @@
                     headers: {"Content-type": "application/json; charset=UTF-8"}  
                 })        
                 const getPixData = await createNewPayment.json()
-                console.log(getPixData.data.status)
-                if(getPixData.message === "payment checked"&& check.data !== null){
+                if(getPixData.message === "payment created"&& getPixData.data !== null){
                   const mercadopagopixid = getPixData.data.id  
                   switch(getPixData.data.status){
                         case  "approved":

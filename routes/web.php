@@ -167,7 +167,7 @@ if (!$is_published) {
 
         //MERCADOPAGO
 
-        Route::group(['prefix' => 'mercadopago', 'as' => 'mercadopagocredit.'], function () {
+        Route::group(['prefix' => 'mercadopago', 'as' => 'mercadopago.'], function () {
             Route::get('pay', [MercadoPagoCreditCardController::class, 'index'])->name('index');
             Route::any('create', [MercadoPagoCreditCardController::class, 'create'])->name('create')->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);
             Route::get('success', [MercadoPagoCreditCardController::class, 'payment_approved'])->name('success');

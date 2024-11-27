@@ -52,7 +52,7 @@ class MercadopagoPixController extends Controller
         if ($validator->fails()) {
             return response()->json($this->response_formatter(GATEWAYS_DEFAULT_400, null, $this->error_processor($validator)), 400);
         }
-        $data = $this->paymentRequest::where(['id' => $request['payment_id']])->first();
+        $data = $this->paymentRequest::where(['id' => $request['payment_id']])->where(['is_paid' => 0])->first();
         if (!isset($data)) {
             $this->payment_failed($request['payment_id']);
             return response()->json($this->response_formatter(GATEWAYS_DEFAULT_204), 200);

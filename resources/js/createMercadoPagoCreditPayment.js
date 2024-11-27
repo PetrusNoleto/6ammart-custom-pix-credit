@@ -1,7 +1,7 @@
 
 async function createNewCreditPayment(paymentId,paymentAccessToken,paymentEmail,paymentValue,paymentDescription,paymentToken,paymentIssuerId,paymentMethodId,paymentInstallments,paymentIdentificationType,paymentIdentificationNumber){
     try{
-        const createNewPayment = await fetch("/payment/mercadopagocredit/create/", {
+        const createNewPayment = await fetch("/payment/mercadopago/create/", {
             method: "POST",
             body: JSON.stringify({
                 paymentId,
