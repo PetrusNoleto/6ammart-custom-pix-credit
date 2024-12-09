@@ -179,7 +179,7 @@ class MercadopagoPixController extends Controller
             $this->paymentRequest::where(['id' => $request['payment_id']])->update([
                 'payment_method' => 'mercadopagopix',
                 'is_paid' => 1,
-                'transaction_id' => $request['transaction_id'],
+                'transaction_id' => $request['transaction_id']
             ]);
             $data = $this->paymentRequest::where(['id' => $request['payment_id']])->first();
             if (isset($data) && function_exists($data->success_hook)) {
